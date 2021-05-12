@@ -19,27 +19,26 @@
             <p></p>
         </div>
     @endif
-    
+
     <table class="table table-bordered table-responsive-lg" class="table text-center">
       
           <thead>  
           <tr>
-            <th>Lecturers</th>
-            <th>Industrialists</th>
+            <th>Students</th>
+            <th></th>
             <th></th>
             <th></th>
             
             
         </tr>
         </thead>
-        @foreach($suggestiont as $user)
+        @foreach($suggestionind as $user)
                 
                     <tr>
                 <table class="table table-dark"  class="table text-center" >
                  
                 
-                <td><a href="{{url('/shlec')}}">{{$user->LecturerID}}</a></td>
-                <td><a href="{{url('/shind')}}">{{$user->Industrialists}}</a></td>
+                <td><a href="{{url('/shstu')}}">{{$user->StudentID}}</a></td>
                 @csrf
                 
                 
@@ -48,10 +47,10 @@
                 </table>    
             </tr>
             
-       
+                
             
         
-                
+       
     
     </body>
 </html>

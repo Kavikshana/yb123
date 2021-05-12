@@ -17,7 +17,7 @@ class CreateIndustrialistsTable extends Migration
             $table->id();
             $table->String('Photo')->nullable();
             $table->String('CompanyPersonalEmailID')->unique();
-            $table->Text('NameWithInitials');
+            $table->String('NameWithInitials');
             $table->String('Designation')->nullable();
             $table->String('LinkedIn')->unique()->nullable();
             $table->String('FieldOfInterests')->nullable();

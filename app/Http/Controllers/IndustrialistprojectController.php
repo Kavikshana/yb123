@@ -16,7 +16,7 @@ use App\Models\Industrialistproject;
 use App\Models\Desclecturer;
 use App\Models\Suggestion;
 use App\Models\Suggestionstud;
-
+use App\Models\ConnectIndustrialist;
 
 class IndustrialistprojectController extends Controller
 {
@@ -61,13 +61,24 @@ class IndustrialistprojectController extends Controller
            
            $connect->save();
            **/
+        $dict =DB::table('mainTerms')->where('mainTerm',$industrialistproject->Technologies)->pluck('mainTermId')->toArray();
+        $connection = new ConnectIndustrialist();
+        $connection->NameWithInitials = request('NameWithInitials');
+        $connection->MainTermID = implode(",",$dict);
+        $connection->save();
+    
           
-          
+        $lec =DB::table('connections')->where('mainTermId',$connection->MainTermID)->pluck('StudentID')->toArray(); 
+        $connect = new Suggestion();
+        $connect->Destination=request('Destination');
+        $connect->MainTermID = $connection->MainTermID;
+        $connect->Industrialists = request('NameWithInitials');
+        $connect->StudentID =implode(",", $lec);
+        $connect->save();
 
-
      
      
      
-    return redirect()->route('users.index');
+    return redirect('/uri');
 }
 }

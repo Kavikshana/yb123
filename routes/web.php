@@ -77,6 +77,7 @@ Route::get('/welcome', function () {
 
 Route::get('/urpd',[UserController::class,'sug'])->name('urpd');
 Route::get('/urp',[UserController::class,'sugglec'])->name('urp');
+Route::get('/uri',[UserController::class,'suggind'])->name('uri');
 Route::get('/create',[UserController::class,'create']);
 Route::post('/store',[UserController::class,'store']);
 Route::get('/edit/{id}',[UserController::class,'edit'])->name('edit');
@@ -126,7 +127,7 @@ Route::post('/stor',[IndustrialistprojectController::class,'stor']);
 
 Route::post('/shstu',[UserController::class,'shstu']);
 Route::post('/shlec',[UserController::class,'shlec']);
-
+Route::post('/shind',[UserController::class,'shind']);
 /*Route::get('Admin/Admin',function(){
     $data=App\user::all();
     return view('Admin/Admin')->with('table_data',$data);

@@ -15,6 +15,7 @@ use App\Models\Academicproject;
 use App\Models\Desclecturer;
 use App\Models\Suggestion;
 use App\Models\Suggestionstud;
+use App\Models\ConnectIndustrialist;
 
 
 class StudentprojectController extends Controller
@@ -77,11 +78,25 @@ class StudentprojectController extends Controller
      $connect->Destination=request('Destination');
      $connect->MainTermID = $maxMainKey;
      $st = request('StudentID');
-     $connect->LecturerID =$stu;
-     $connect->LecturerID = implode(", ",$stu);
+     //$connect->LecturerID =$stu;
+     $connect->LecturerID =implode(",",$stu);
+     //$stud=explode("<br>",$stu);
+     //foreach($stud as $i)
+        //$connect->LecturerID= $i;
      $connect->StudentID=$st;
+     
+     
+
+     $stuss =DB::table('connect_industrialists')->where('MainTermID',$maxMainKey)->pluck('NameWithInitials')->toArray();
+     
+     $connect->Industrialists=implode(",",$stuss);
+     /**$connect1 = new Suggestion();
+     $connect1->Destination=request('Destination');
+     $connect1->MainTermID = $maxMainKey;
+     $connect1->StudentID= request('StudentID');
+     
+     $connect1->save();**/
      $connect->save();
-    
      
     return redirect('/urpd');
 }

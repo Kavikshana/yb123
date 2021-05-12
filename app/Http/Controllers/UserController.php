@@ -195,7 +195,7 @@ class UserController extends Controller
         public function sug(){
            
         $ss =DB::table('suggestions')->orderby('id','DESC')->limit(1)->get();
-       
+        //$su=implode("<br>",$user->LecturerID);
             return view('studentprojects/suggestion')->with('suggestiont',$ss);
       
     }
@@ -204,6 +204,10 @@ class UserController extends Controller
           
     public function shlec(){
     return view('ShowProfile/academicsp');     
+ }
+
+ public function shind(){
+    return view('ShowProfile/industrialistsp');     
  }
 
  public function sugglec(){
@@ -217,6 +221,13 @@ class UserController extends Controller
     return view('ShowProfile/studentsp');     
  }
 
+
+ public function suggind(){
+           
+    $ii =DB::table('suggestions')->orderby('id','DESC')->limit(1)->get();
+    
+        return view('studentprojects/suggind')->with('suggestionind',$ii);
+ }
 }
    /**@foreach ($suggestiont as $user)
         

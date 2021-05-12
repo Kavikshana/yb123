@@ -106,8 +106,9 @@ form {
                 <option>Emerging Trends</option>
                 <option>High Performance Computing</option>
                 <option>Image Processing and Computer Vision</option>
-                <option>Machine Learning</option>
+                <option>Data Mining and Machine Learning</option>
                 <option>Systems and Network Administration</option>
+                <option>Artificial Intelligence</option>
 				
             </select>
         </p> 

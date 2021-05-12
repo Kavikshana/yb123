@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSuggestionsTable extends Migration
+class CreateConnectIndustrialistsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateSuggestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('suggestions', function (Blueprint $table) {
+        Schema::create('connect_industrialists', function (Blueprint $table) {
             $table->id();
-            $table->string('Destination');
-            $table->string('MainTermID');
-            $table->string('StudentID');
-            $table->string('LecturerID')->nullable();
-            $table->string('Industrialists')->nullable();
+            $table->String('NameWithInitials');
+            $table->String('mainTermID');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class CreateSuggestionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('suggestions');
+        Schema::dropIfExists('connect_industrialists');
     }
 }

@@ -71,12 +71,12 @@ class AcademicprojectController extends Controller
          $connectionl->MainTermID = $maxMainKey;
          $connectionl->save();
          
-        $lec =DB::table('connections')->where('mainTermId',$maxMainKey)->pluck('StudentID'); 
+        $lec =DB::table('connections')->where('mainTermId',$maxMainKey)->pluck('StudentID')->toArray(); 
         $connect = new Suggestion();
         $connect->Destination=request('Destination');
         $connect->MainTermID = $maxMainKey;
         $connect->LecturerID = request('LecturerID');
-        $connect->StudentID = $lec;
+        $connect->StudentID = implode(",",$lec);
         $connect->save();
     
 
