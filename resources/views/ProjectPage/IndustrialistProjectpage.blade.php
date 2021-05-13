@@ -41,7 +41,7 @@ form {
 
 <body> 
     <h2
-    class="p-3 mb-2 bg-dark text-white" style="text-align: center;">Project Details For lecturers</h2> 
+    class="p-3 mb-2 bg-dark text-white" style="text-align: center;">Project Details For Industrialists</h2> 
     <form
     class="p-3 mb-2 bg-secondary text-white"
     name="ProjectForm" method="post" action="/stor">
