@@ -111,6 +111,19 @@ input[type=text], select, textarea{
                <div>
             <button id="myBtn"type="button" class="btn btn-primary">Edit Profile</button>
             </div>
+            <div>
+            <button type="button" class="btn btn-primary" style="height:40px;">Project
+            
+            <form method="POST" action="{{ url('/spp') }}">
+                            @csrf
+                            <x-dropdown-link :href="url('/spp')">
+                                    
+                                
+                            </x-dropdown-link>
+                            
+                        </form>
+                        </button>
+                        </div>
               <button class="btn btn-block btn-warning" style="height:40px;" >
                 <!--i class="fa fa-sign-out"></i-->
                 <form method="POST" action="{{ route('logout') }}">
@@ -310,6 +323,7 @@ input[type=text], select, textarea{
         <input class="btn btn-primary" type="submit" value="submit">
         
     </form>
+    
   </div>
 
 </div>

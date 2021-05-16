@@ -79,7 +79,8 @@ class StudentprojectController extends Controller
      $connect->MainTermID = $maxMainKey;
      $st = request('StudentID');
      //$connect->LecturerID =$stu;
-     $connect->LecturerID =implode(",",$stu);
+     $ls=implode(",",$stu);
+     $connect->LecturerID = Str::of($ls)->split('/[\s,]+/');
      //$stud=explode("<br>",$stu);
      //foreach($stud as $i)
         //$connect->LecturerID= $i;
@@ -89,7 +90,8 @@ class StudentprojectController extends Controller
 
      $stuss =DB::table('connect_industrialists')->where('MainTermID',$maxMainKey)->pluck('NameWithInitials')->toArray();
      
-     $connect->Industrialists=implode(",",$stuss);
+     $is=implode(",",$stuss);
+     $connect->Industrialists = Str::of($is)->split('/[\s,]+/');
      /**$connect1 = new Suggestion();
      $connect1->Destination=request('Destination');
      $connect1->MainTermID = $maxMainKey;

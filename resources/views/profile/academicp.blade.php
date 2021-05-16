@@ -105,6 +105,18 @@
                <div>
             <button id="myBtn"type="button" class="btn btn-primary">Edit Profile</button>
             </div>
+            <button type="button" class="btn btn-primary" style="height:40px;">Project
+            
+            <form method="POST" action="{{ url('/lpp') }}">
+                            @csrf
+                            <x-dropdown-link :href="url('/lpp')">
+                                    
+                                
+                            </x-dropdown-link>
+                            
+                        </form>
+                        </button>
+                        </div>
               <button class="btn btn-block btn-warning" style="height:40px;" >
                 <!--i class="fa fa-sign-out"></i-->
                 <form method="POST" action="{{ route('logout') }}">

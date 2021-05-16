@@ -196,6 +196,7 @@ class UserController extends Controller
            
         $ss =DB::table('suggestions')->orderby('id','DESC')->limit(1)->get();
         //$su=implode("<br>",$user->LecturerID);
+        
             return view('studentprojects/suggestion')->with('suggestiont',$ss);
       
     }
